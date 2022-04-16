@@ -22,6 +22,14 @@
 > * async_session.remove() from async_session.registry
 > ```
 
+>- pydantic
+> ```
+> - Validate Request Body
+> @root_validator()
+>    def validate_fields(cls, values)
+>    return values
+> ``` 
+
 
 ## Celery
 
