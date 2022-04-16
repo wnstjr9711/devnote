@@ -15,13 +15,11 @@
 >    logger.setLevel(logging.INFO)
 >    logger.addHandler(watchtower.CloudWatchLogHandler(log_group_name="{group_name}", log_stream_name="{stream_name}"))
 >```
-
 >- sqlalchemy
 > ```
 > * async_scpoed_session - Context-Local
 > * async_session.remove() from async_session.registry
 > ```
-
 >- pydantic
 > ```
 > - Validate Request Body
