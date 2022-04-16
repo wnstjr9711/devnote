@@ -23,3 +23,6 @@ $docker exec -it {redis container name} redis-cli
 - RDB Save ERROR
 >config set stop-writes-on-bgsave-error no
 ```
+- Redis Stream
+  - Storage + Pub Sub
+  - using websocket `asyncio.gather(ws_send, ws_receive)`
