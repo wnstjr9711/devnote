@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 ## Redis
 
-- `set password --requirepass "{password}"`
+- `set password --requirepass {password}`
 
 ```ShellSession
 $docker pull redis
@@ -25,6 +25,7 @@ $docker run -d -p 6379:6379 -v {redis.conf folder path}/:/usr/local/etc/redis/ -
 
 - run docker redis-cli
 $docker exec -it {redis container name} redis-cli
+password: redis-cli --askpass
 
 - RDB Save ERROR
 >config set stop-writes-on-bgsave-error no
