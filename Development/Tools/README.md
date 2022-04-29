@@ -6,6 +6,12 @@ $sudo usermod -aG docker ubuntu
 $sudo service docker start
 ```
 
+```ShellSession
+- Dockerfile
+# if requirments.txt differ from cache
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+```
+`$ docker build -t {name} .`
 
 ## Redis
 
