@@ -15,8 +15,9 @@ root    hard    nofile    65536
 ## Docker
 
 ```ShellSession
+*Run docker as none root user*
 $sudo apt install docker.io
-$sudo usermod -aG docker ubuntu
+$sudo usermod -aG docker {NONE ROOT USER}
 $sudo service docker start
 ```
 
@@ -25,7 +26,7 @@ $sudo service docker start
 # if requirments.txt differ from cache
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 ```
-`$ docker build -t {name} .`
+`$ docker compose up #--build`
 
 ## Redis
 
