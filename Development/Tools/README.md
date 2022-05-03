@@ -3,6 +3,13 @@
 ```ShellSession
 # find PID with searching
 $ps -ef | grep {process name}
+
+# open files limit upgrade ( * stands all user except root)
+sudo vi /etc/security/limits.conf
+*       soft    nofile    65536
+*       hard    nofile    65536
+root    soft    nofile    65536
+root    hard    nofile    65536
 ```
 
 ## Docker
