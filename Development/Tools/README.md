@@ -1,3 +1,10 @@
+## Linux
+
+```ShellSession
+# find PID with searching
+$ps -ef | grep {process name}
+```
+
 ## Docker
 
 ```ShellSession
