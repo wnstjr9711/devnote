@@ -20,13 +20,21 @@ $sudo apt install docker.io
 $sudo usermod -aG docker {NONE ROOT USER}
 $sudo service docker start
 ```
-
 ```ShellSession
 - Dockerfile
+
 # if requirments.txt differ from cache
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
+# run as non root user
+RUN sudo adduser -u $UID $USER
+USER $USER
 ```
-`$ docker compose up #--build`
+- aws-cli in Dockerfile
+  1. Set aws configure as root
+  2. Copy /root/.aws/(~/.aws/ in root) -> /home/$USER/.aws/(~/.aws in non-root user)
+  3. chown -R $USER /home/$USER/.aws/
+  4. USER $USER
 
 ## Redis
 
