@@ -1,5 +1,4 @@
 ## Linux
-
 ```ShellSession
 # find PID with searching
 $ps -ef | grep {process name}
@@ -11,9 +10,8 @@ sudo vi /etc/security/limits.conf
 root    soft    nofile    65536
 root    hard    nofile    65536
 ```
-
+---
 ## Docker
-
 ```ShellSession
 *Run docker as none root user*
 $sudo apt install docker.io
@@ -35,11 +33,10 @@ USER $USER
   2. Copy /root/.aws/(~/.aws/ in root) -> /home/$USER/.aws/(~/.aws in non-root user)
   3. chown -R $USER /home/$USER/.aws/
   4. USER $USER
-
+---
 ## Redis
-
+- Single-Threaded(multiple sessions are unnecessary)
 - `set password --requirepass {password}`
-
 ```ShellSession
 $docker pull redis
 
@@ -56,3 +53,4 @@ password: redis-cli --askpass
 - Redis Stream
   - Storage + Pub Sub
   - using websocket `asyncio.gather(ws_send, ws_receive)`
+---

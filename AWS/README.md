@@ -27,12 +27,10 @@
 > SET IAM
 > - Add Permission CloudWatchLogsFullAccess Policy
 > - $aws configure(User with CloudWatchLogsFullAccess)
-
 ---
 ## S3
 - Bucket Policy
 - CORS Policy
-
 > Mount with Goofys
 > ```
 > install golang, awscli, goofys
