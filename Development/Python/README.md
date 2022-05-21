@@ -1,5 +1,4 @@
 ## FastAPI
-
 >- logging
 >```
 >- LOCAL
@@ -26,11 +25,9 @@
 > @root_validator()
 >    def validate_fields(cls, values)
 >    return values
-> ``` 
-
-
+> ```
+---
 ## Celery
-
 - multiprocessing
 - CPU intensive
 - Redis messaging broker

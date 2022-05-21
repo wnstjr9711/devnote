@@ -33,7 +33,6 @@ USER $USER
   2. Copy /root/.aws/(~/.aws/ in root) -> /home/$USER/.aws/(~/.aws in non-root user)
   3. chown -R $USER /home/$USER/.aws/
   4. USER $USER
-
 ### Docker with GPU
 ```ShellSession
 $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
@@ -44,7 +43,6 @@ $ sudo apt-get install -y nvidia-docker2
 -> restart docker
 docker run --rm --gpus all {container name} nvidia-smi -q
 ```
-
 ---
 ## Redis
 - Single-Threaded(multiple sessions are unnecessary)
