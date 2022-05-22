@@ -34,3 +34,9 @@
 ```
 $celery --app celery_task worker -c 6 --loglevel=INFO --logfile=./celery.log
 ```
+---
+## Pytorch
+1. OS, pytorch, CUDA, CUDNN version check(GPU Compatibility) https://pytorch.org/get-started/locally/
+2. pull image of cuda (docker pull nvidia/cuda:11.3.0-cudnn8-runtime-ubuntu20.04) https://hub.docker.com/r/nvidia/cuda
+3. Multi Stage Build in Dockerfile From cuda -> From python
+---

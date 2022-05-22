@@ -41,7 +41,18 @@ $ distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
 $ sudo apt-get update
 $ sudo apt-get install -y nvidia-docker2
 -> restart docker
-docker run --rm --gpus all {container name} nvidia-smi -q
+
+- check
+$ docker run --rm --gpus all {container name} nvidia-smi -q
+
+- attach GPU in docker-compose.yml
+deploy:
+  resources:
+    reservations:
+      devices:
+        - driver: nvidia
+          count: 1
+          capabilities: [gpu]
 ```
 ---
 ## Redis
