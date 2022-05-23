@@ -50,9 +50,7 @@ deploy:
   resources:
     reservations:
       devices:
-        - driver: nvidia
-          count: 1
-          capabilities: [gpu]
+        - capabilities: [gpu]
 ```
 ---
 ## Redis
