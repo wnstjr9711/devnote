@@ -17,7 +17,6 @@
 >- sqlalchemy
 > ```
 > * async_scpoed_session - Context-Local
-> * async_session.remove() from async_session.registry
 > ```
 >- pydantic
 > ```
@@ -33,6 +32,22 @@
 - Redis messaging broker
 ```
 $celery --app celery_task worker -c 6 --loglevel=INFO --logfile=./celery.log
+```
+### receive celery result as task done(asynchronously)
+```python
+import asyncio
+from asgiref.sync import sync_to_async
+
+# Converts a Celery tasks to an async function
+def task_to_async(task):
+    async def wrapper(*args, **kwargs):
+        delay = 0.1
+        async_result = await sync_to_async(task.delay)(*args, **kwargs)
+        while not async_result.ready():
+            await asyncio.sleep(delay)
+            delay = min(delay * 1.5, 2)  # exponential backoff, max 2 seconds
+        return async_result.get()
+    return wrapper
 ```
 ---
 ## Pytorch
