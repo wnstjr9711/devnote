@@ -79,4 +79,5 @@ password: redis-cli --askpass
 2. check firewall
 3. register DNS with public IP
 4. https://github.com/wnstjr9711/nginx-certbot
+5. certbot renewal
 ---
