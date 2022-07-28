@@ -18,9 +18,8 @@ $sudo apt install docker.io
 $sudo usermod -aG docker {NONE ROOT USER}
 $sudo service docker start
 ```
-```ShellSession
 - Dockerfile
-
+```dockerfile
 # if requirments.txt differ from cache
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
@@ -42,10 +41,11 @@ $ sudo apt-get update
 $ sudo apt-get install -y nvidia-docker2
 -> restart docker
 
-- check
+check
 $ docker run --rm --gpus all {container name} nvidia-smi -q
-
+```
 - attach GPU in docker-compose.yml
+```yaml
 deploy:
   resources:
     reservations:
@@ -80,4 +80,9 @@ password: redis-cli --askpass
 3. register DNS with public IP
 4. https://github.com/wnstjr9711/nginx-certbot
 5. certbot renewal
+6. nginx.conf
+   ```
+   # server_tokens off;
+   # set timeout
+   ```
 ---
