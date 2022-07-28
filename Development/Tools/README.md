@@ -73,3 +73,10 @@ password: redis-cli --askpass
   - Storage + Pub Sub
   - using websocket `asyncio.gather(ws_send, ws_receive)`
 ---
+---
+## Nginx + Certbot
+1. Port Forward - 80, 443 (iptime: 192.168.0.1)
+2. check firewall
+3. register DNS with public IP
+4. https://github.com/wnstjr9711/nginx-certbot
+---
