@@ -74,6 +74,11 @@ password: redis-cli --askpass
   - using websocket `asyncio.gather(ws_send, ws_receive)`
 ---
 ---
+## PostgreSQL
+- Handle Sqlalchemy QueuePool params <b>pool_size, max_overflow, pool_recycle</b>  
+  - Set pool_recycle NOT to stack IDLE sessions
+---
+---
 ## Nginx + Certbot
 1. Port Forward - 80, 443 (iptime: 192.168.0.1)
 2. check firewall
