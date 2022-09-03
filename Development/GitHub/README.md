@@ -1,3 +1,19 @@
+## Commands
+- Create new empty branch
+  - https://jira.atlassian.com/browse/SRCTREEWIN-8976
+  - ```
+    #Local Project Folder connection to Git
+    git init
+    git add .
+    git commit -m "<commit message>"
+    git remote add origin <Remote repository URL>
+    #git branch -m <branch name>
+    git push origin <branch name>
+    
+    #branch delete
+    git push origin --delete <branch name>
+    ```
+---
 ## Actions
 
 - cron scheduler
