@@ -13,6 +13,8 @@
     #branch delete
     git push origin --delete <branch name>
     ```
+- Reset push
+  - https://eyeballs.tistory.com/446
 ---
 ## Actions
 
