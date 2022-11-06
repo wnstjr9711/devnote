@@ -8,4 +8,22 @@
 - .env
   - process.env.REACT_APP_*
 - hide sourcecode
-  - "build": "GENERATE_SOURCEMAP=false react-scripts build"
+  ```
+  "scripts":{
+    ...
+    "build": "GENERATE_SOURCEMAP=false react-scripts build"
+  }
+  ```
+---
+## Github Pages
+- npm i gh-pages
+- set homepage, CNAME 
+  ```
+  "homepage": "https://*"
+  "scripts":{
+    ...
+    "predeploy": "npm run build && cp CNAME ./build",
+    "deploy": "gh-pages -d build"
+  }
+  ```
+- `npm run deploy`
