@@ -54,7 +54,8 @@ deploy:
 ```
 ---
 ## Redis
-- Single-Threaded(multiple sessions are unnecessary)
+- Single-Threaded(multiple sessions are unnecessary, multiple instances than multiple databases)
+- All objects are regarded as a **String** type
 - `set password --requirepass {password}`
 ```ShellSession
 $docker pull redis
