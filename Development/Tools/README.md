@@ -74,11 +74,19 @@ password: redis-cli --askpass
   - Storage + Pub Sub
   - using websocket `asyncio.gather(ws_send, ws_receive)`
 ---
----
 ## PostgreSQL
 - Handle Sqlalchemy QueuePool params <b>pool_size, max_overflow, pool_recycle</b>  
   - Set pool_recycle NOT to stack IDLE sessions
----
+- PostGIS
+  1. ```postgresql 
+     --postgresql
+     CREATE EXTENSION postgis;
+     ```
+  2. ```python
+     #Python
+     import sqlalchemy
+     from geoalchemy2 import Geometry 
+     ```
 ---
 ## Nginx + Certbot
 1. Port Forward - 80, 443 (iptime: 192.168.0.1)
