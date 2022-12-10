@@ -6,7 +6,8 @@
 - Set 443 Port Load Balancer & Web Server Port(FastAPI:8000) Target Group
   - Due to interception of CLIENT<->Server request, ELB adds `x-fowarded-for`: `client-ip-address` into request header
 - Set Security Group
-- #### LoadBalancer
+- #### LoadBalancer(ELB)
+  - Inbound HTTPS(443) forward to EC2 WAS port
   - redirect not working on POST method - not sending body
   - forward target groups to use multiple server
 ---
