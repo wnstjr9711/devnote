@@ -52,6 +52,13 @@ deploy:
       devices:
         - capabilities: [gpu]
 ```
+- commands
+```
+#run container
+docker exec -it {container_name} {command}
+#remove none images
+docker rmi $(docker images -f "dangling=true" -q)
+```
 ---
 ## Redis
 - Single-Threaded(multiple sessions are unnecessary, multiple instances than multiple databases)
