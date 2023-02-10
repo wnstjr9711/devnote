@@ -14,6 +14,13 @@
     "build": "GENERATE_SOURCEMAP=false react-scripts build"
   }
   ```
+- react-router-dom + gh-pages deploy
+  ```
+  "scripts":{
+    ...
+    "predeploy": "npm run build && cp build/index.html build/404.html",
+  }
+  ```
 ---
 ## Github Pages
 - npm i gh-pages
