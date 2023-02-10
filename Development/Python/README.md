@@ -18,7 +18,8 @@
   - limit API call per client(ip)
   - redis expire/ttl key
 - sqlalchemy
-  - async_scpoed_session - Context-Local
+  - sqlalchemy Core + encode/databases
+  - connection pool with databases(asynchronous)
 - pydantic
   ```python
   - Validate Request Body
@@ -50,7 +51,3 @@ $celery --app celery_task worker -c 6 --loglevel=INFO --logfile=./celery.log
 >        return async_result.get()
 >    return wrapper
 >```
----
-## Pytorch
-1. pytorch cuda compatible image: https://hub.docker.com/r/pytorch/pytorch/tags
----
