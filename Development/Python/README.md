@@ -1,18 +1,39 @@
 ## FastAPI
 - logging
   ```python
-  - LOCAL
+  # LOCAL
   @app.on_event('startup')
   async def startup_event():
       logger.setLevel(logging.INFO)
       logHandler = logging.StreamHandler()
       logger.addHandler(logHandler)
   
-  - AWS CLOUDWATCH
+  # AWS CLOUDWATCH
   @app.on_event('startup')
   async def startup_event():
       logger.setLevel(logging.INFO)
       logger.addHandler(watchtower.CloudWatchLogHandler(log_group_name="{group_name}", log_stream_name="{stream_name}"))
+  ```
+  ```python
+  # Log body of POST requests
+  @app.middleware("http")
+  async def log(request: Request, call_next):
+      try:
+          body = await request.body()
+  
+          async def receive():
+              return {'type': 'http.request', 'body': body}
+  
+          request._receive = receive
+          response = await call_next(request)
+          if request.url.path != '/':
+              logger.info(
+                  'address: {}, {} {}?{} body:{} {}'.format(request.headers.get('x-forwarded-for'), request.method,
+                                                            request.url.path, request.url.query, body,
+                                                            response.status_code))
+          return response
+      except Exception:
+          logger.info(traceback.format_exc())
   ```
 - Rate Limiting(Throttling)
   - limit API call per client(ip)
@@ -22,7 +43,7 @@
   - connection pool with databases(asynchronous)
 - pydantic
   ```python
-  - Validate Request Body
+  # Validate Request Body
   @root_validator()
   def validate_fields(cls, values):
       return values
