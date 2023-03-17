@@ -1,3 +1,9 @@
+## Nodejs
+```shell
+sudo apt install nodejs && npm
+https://www.freecodecamp.org/korean/news/how-to-update-node-and-npm-to-the-latest-version/
+```
+---
 ## CSS
 - id(#) vs class(.)
   - https://bangu4.tistory.com/26
